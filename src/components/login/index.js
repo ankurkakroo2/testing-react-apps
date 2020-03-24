@@ -20,21 +20,23 @@ function Login({ history }) {
       <h1>Login</h1>
       <form>
         <div>
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             {...username}
             id="username"
             data-test-id="username"
+            required
           />
         </div>
         <div>
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             {...password}
             id="password"
             data-test-id="password"
+            required
           />
         </div>
         {error && (
@@ -43,7 +45,7 @@ function Login({ history }) {
           </>
         )}
         <input
-          type="button"
+          type="submit"
           value={loading ? "Loading..." : "Login"}
           onClick={handleLogin}
           disabled={loading}
