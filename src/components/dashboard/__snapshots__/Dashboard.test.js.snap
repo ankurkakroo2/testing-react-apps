@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="dashboard"
+  >
+    Dashboard
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Login snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="dashboard"
+  >
+    Dashboard
+  </div>
+</DocumentFragment>
+`;

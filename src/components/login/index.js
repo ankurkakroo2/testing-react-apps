@@ -17,7 +17,7 @@ function Login({ history }) {
 
   return (
     <section>
-      <h1>Login</h1>
+      <h1 data-testid="login-heading">Login</h1>
       <form>
         <div>
           <label htmlFor="username">Username</label>
