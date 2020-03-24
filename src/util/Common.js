@@ -15,7 +15,7 @@ export const useFormInput = initialValue => {
 // return the user data from the session storage
 export const getUser = () => {
   const userStr = sessionStorage.getItem('user');
-  if (userStr) return JSON.parse(userStr);
+  if (userStr) return userStr;
   else return null;
 }
 
