@@ -1,8 +1,3 @@
-import React from "react";
-import "./default.css";
-
-function Dashboard() {
-  return <div className="dashboard">Dashboard</div>;
-}
+import Dashboard from './Dashboard';
 
 export default Dashboard;
