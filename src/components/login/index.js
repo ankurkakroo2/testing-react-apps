@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useFormInput } from "../../util/common";
+import { useFormInput, setUserSession } from "../../util/Common";
 import "./default.css";
 
 function Login({ history }) {
@@ -9,17 +9,23 @@ function Login({ history }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
-    setError(null);
+  const handleLogin = (event) => {  
+    event.preventDefault();
     setLoading(true);
-    history.push("/dashboard");
+    if(username.value ==='admin' && password.value === 'admin'){
+      setUserSession(`admin_${Math.random(0,100)}`, username.value);
+      history.push("/dashboard");
+      setError(null);
+    }
+    setLoading(false);
   };
 
   return (
-    <section>
+    <section className="login-form">
       <h1>Login</h1>
+      <form onSubmit={handleLogin}>
       <div>
-        <label for="username">Username</label>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
           {...username}
@@ -28,7 +34,7 @@ function Login({ history }) {
         />
       </div>
       <div>
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           {...password}
@@ -42,11 +48,11 @@ function Login({ history }) {
         </>
       )}
       <input
-        type="button"
+        type="submit"
         value={loading ? "Loading..." : "Login"}
-        onClick={handleLogin}
         disabled={loading}
       />
+      </form>
     </section>
   );
 }
