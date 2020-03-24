@@ -9,11 +9,11 @@ function Login({ history }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = event => {
+  const handleLogin = (event) => {  
     event.preventDefault();
     setLoading(true);
-    if (username.value === "admin" && password.value === "admin") {
-      setUserSession(`admin_${Math.random(0, 100)}`, username.value);
+    if(username.value ==='admin' && password.value === 'admin'){
+      setUserSession(`admin_${Math.random(0,100)}`, username.value);
       history.push("/dashboard");
       setError(null);
     }
@@ -24,34 +24,34 @@ function Login({ history }) {
     <section className="login-form">
       <h1>Login</h1>
       <form onSubmit={handleLogin}>
-        <div>
-          <label htmlFor="username">Username</label>
-          <input
-            type="submit"
-            value={loading ? "Loading..." : "Login"}
-            onClick={handleLogin}
-            disabled={loading}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            {...password}
-            id="password"
-            data-test-id="password"
-          />
-        </div>
-        {error && (
-          <>
-            <small style={{ color: "red" }}>{error}</small>
-          </>
-        )}
+      <div>
+        <label htmlFor="username">Username</label>
         <input
-          type="submit"
-          value={loading ? "Loading..." : "Login"}
-          disabled={loading}
+          type="text"
+          {...username}
+          id="username"
+          data-test-id="username"
         />
+      </div>
+      <div>
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          {...password}
+          id="password"
+          data-test-id="password"
+        />
+      </div>
+      {error && (
+        <>
+          <small style={{ color: "red" }}>{error}</small>
+        </>
+      )}
+      <input
+        type="submit"
+        value={loading ? "Loading..." : "Login"}
+        disabled={loading}
+      />
       </form>
     </section>
   );
