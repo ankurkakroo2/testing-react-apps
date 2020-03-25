@@ -55,24 +55,31 @@ const Dashboard = props => {
           </Typography>
           <div>
             <IconButton
+              id="account-icon-button"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleClick}
               color="inherit"
             >
-              <AccountCircle fontSize="large" />
+              <AccountCircle />
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id="account-menu"
               anchorEl={anchorEl}
               keepMounted
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={() => {}}>Signed in as: {user}</MenuItem>
-              <MenuItem onClick={() => {}}>Profile</MenuItem>
-              <MenuItem onClick={handleLogout}>Logout</MenuItem>
+              <MenuItem id="menu-item-username" onClick={() => {}}>
+                Signed in as: {user}
+              </MenuItem>
+              <MenuItem id="menu-item-profile" onClick={() => {}}>
+                Profile
+              </MenuItem>
+              <MenuItem id="menu-item-logout" onClick={handleLogout}>
+                Logout
+              </MenuItem>
             </Menu>
           </div>
         </Toolbar>
