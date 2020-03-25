@@ -20,7 +20,7 @@ const Dashboard = (props)=> {
       <input className="dashboard__logout-btn" type="button" onClick={handleLogout} value="Logout" /></div>
       </div>
      <p>Welcome {user}!</p> 
-      <PlaceHolder/>
+      <PlaceHolder count={6}/>
     </section>
   );
 }
