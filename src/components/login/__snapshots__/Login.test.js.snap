@@ -11,27 +11,31 @@ exports[`Login snapshot 1`] = `
       Login
     </h1>
     <form>
-      <div>
+      <div
+        class="form-field"
+      >
         <label
           for="username"
         >
           Username
         </label>
         <input
-          data-test-id="username"
+          data-testid="username"
           id="username"
           type="text"
           value=""
         />
       </div>
-      <div>
+      <div
+        class="form-field"
+      >
         <label
           for="password"
         >
           Password
         </label>
         <input
-          data-test-id="password"
+          data-testid="password"
           id="password"
           type="password"
           value=""
@@ -39,7 +43,8 @@ exports[`Login snapshot 1`] = `
       </div>
       <input
         class="submit-btn"
-        data-test-id="submit-btn"
+        data-testid="submit-btn"
+        id="submit-btn"
         type="submit"
         value="Login"
       />
