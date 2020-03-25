@@ -1,5 +1,5 @@
 import React from "react";
-import Dashboard from "./index";
+import Dashboard from "./Dashboard";
 import { render } from "@testing-library/react";
 
 let result;
@@ -9,7 +9,7 @@ beforeEach(() => {
 
 describe("Dashboard", () => {
   test("render without crash", () => {
-    expect(result.getByText("Dashboard")).toBeInTheDocument();
+    expect(result.getByText("Welcome", { exact: false })).toBeInTheDocument();
   });
 
   test("snapshot", () => {

@@ -2,20 +2,184 @@
 
 exports[`Dashboard snapshot 1`] = `
 <DocumentFragment>
-  <div
+  <section
     class="dashboard"
   >
-    Dashboard
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Login snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="dashboard"
-  >
-    Dashboard
-  </div>
+    <div
+      class="dashboard__header"
+    >
+      <div
+        class="dashboard__header__profile-section"
+      >
+        <div
+          class="dashboard__header__profile-icon"
+        />
+        <input
+          class="dashboard__logout-btn"
+          type="button"
+          value="Logout"
+        />
+      </div>
+    </div>
+    <p>
+      Welcome !
+    </p>
+    <div
+      class="box-placeholder"
+    >
+      <div
+        class="p-4"
+      >
+        <span
+          class="category text link"
+        />
+        <h4
+          class="text line"
+        />
+        <h4
+          class="text"
+        />
+      </div>
+      <hr />
+      <div
+        class="image"
+      >
+        <div
+          class="embed-responsive embed-responsive-16by9"
+        />
+      </div>
+      <hr />
+      <div
+        class="excerpt p-4"
+      >
+        <div
+          class="text line"
+        />
+        <div
+          class="text line"
+        />
+        <div
+          class="text"
+        />
+      </div>
+    </div>
+    <div
+      class="box-placeholder"
+    >
+      <div
+        class="p-4"
+      >
+        <span
+          class="category text link"
+        />
+        <h4
+          class="text line"
+        />
+        <h4
+          class="text"
+        />
+      </div>
+      <hr />
+      <div
+        class="image"
+      >
+        <div
+          class="embed-responsive embed-responsive-16by9"
+        />
+      </div>
+      <hr />
+      <div
+        class="excerpt p-4"
+      >
+        <div
+          class="text line"
+        />
+        <div
+          class="text line"
+        />
+        <div
+          class="text"
+        />
+      </div>
+    </div>
+    <div
+      class="box-placeholder"
+    >
+      <div
+        class="p-4"
+      >
+        <span
+          class="category text link"
+        />
+        <h4
+          class="text line"
+        />
+        <h4
+          class="text"
+        />
+      </div>
+      <hr />
+      <div
+        class="image"
+      >
+        <div
+          class="embed-responsive embed-responsive-16by9"
+        />
+      </div>
+      <hr />
+      <div
+        class="excerpt p-4"
+      >
+        <div
+          class="text line"
+        />
+        <div
+          class="text line"
+        />
+        <div
+          class="text"
+        />
+      </div>
+    </div>
+    <div
+      class="box-placeholder"
+    >
+      <div
+        class="p-4"
+      >
+        <span
+          class="category text link"
+        />
+        <h4
+          class="text line"
+        />
+        <h4
+          class="text"
+        />
+      </div>
+      <hr />
+      <div
+        class="image"
+      >
+        <div
+          class="embed-responsive embed-responsive-16by9"
+        />
+      </div>
+      <hr />
+      <div
+        class="excerpt p-4"
+      >
+        <div
+          class="text line"
+        />
+        <div
+          class="text line"
+        />
+        <div
+          class="text"
+        />
+      </div>
+    </div>
+  </section>
 </DocumentFragment>
 `;

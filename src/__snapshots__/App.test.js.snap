@@ -2,9 +2,11 @@
 
 exports[`renders learn react link 1`] = `
 <DocumentFragment>
-  <section>
+  <section
+    class="login-form"
+  >
     <h1
-      data-testid="login-heading"
+      class="sign-in"
     >
       Login
     </h1>
@@ -36,7 +38,9 @@ exports[`renders learn react link 1`] = `
         />
       </div>
       <input
-        type="button"
+        class="submit-btn"
+        data-test-id="submit-btn"
+        type="submit"
         value="Login"
       />
     </form>
