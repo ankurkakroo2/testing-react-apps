@@ -34,11 +34,11 @@ function Login({ history }) {
       setLoading(false);
     }
   };
-  const resetErrors = () =>{
+  const resetErrors = () => {
     setError(null);
     setUserNameError(null);
-    setPasswordError(null)
-  }
+    setPasswordError(null);
+  };
   const validateUserDetails = () => {
     if (!username.value.trim()) {
       setUserNameError(Blank_UserName);
@@ -54,7 +54,7 @@ function Login({ history }) {
     <section className="login-form">
       <h1 className="sign-in">Login</h1>
       <form onSubmit={handleLogin}>
-        <div>
+        <div className="form-field">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -67,7 +67,7 @@ function Login({ history }) {
           <Error className="login-form__username-error">{userNameError}</Error>
          
         )}
-        <div>
+        <div className="form-field">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -84,6 +84,7 @@ function Login({ history }) {
     
         )}
         <input
+          id="submit-btn"
           type="submit"
           value={loading ? "Loading..." : "Login"}
           disabled={loading}
