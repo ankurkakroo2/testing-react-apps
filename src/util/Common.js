@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const useFormInput = initialValue => {
   const [value, setValue] = useState(initialValue);
@@ -11,7 +11,9 @@ export const useFormInput = initialValue => {
     onChange: handleChange
   };
 };
-
+export const Error = ({className, children}) =>  (<p className={`${className} login-error`}>
+{children}
+</p>)
 // return the user data from the session storage
 export const getUser = () => {
   const userStr = sessionStorage.getItem('user');

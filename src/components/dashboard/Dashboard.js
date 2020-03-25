@@ -84,18 +84,7 @@ const Dashboard = props => {
           </div>
         </Toolbar>
       </AppBar>
-      {/* <div className="dashboard__header">
-        <div className="dashboard__header__profile-section">
-          <div className="dashboard__header__profile-icon"></div>
-          <input
-            className="dashboard__logout-btn"
-            type="button"
-            onClick={handleLogout}
-            value="Logout"
-          />
-        </div>
-      </div> */}
-      <PlaceHolder />
+      <PlaceHolder count={6}/>
     </section>
   );
 };

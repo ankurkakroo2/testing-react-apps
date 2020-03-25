@@ -14,8 +14,7 @@ body {
   padding: 30px;
 }
 
-.login-form__error,
-.login-form__password-error {
+.login-error {
   color: red;
 }
 

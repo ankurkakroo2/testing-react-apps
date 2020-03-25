@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useFormInput, setUserSession } from "../../util/Common";
+import { useFormInput, setUserSession, Error } from "../../util/Common";
 import {
   UserName,
   Password,
@@ -64,7 +64,8 @@ function Login({ history }) {
           />
         </div>
         {userNameError && (
-          <p className="login-form__username-error">{userNameError}</p>
+          <Error className="login-form__username-error">{userNameError}</Error>
+         
         )}
         <div className="form-field">
           <label htmlFor="password">Password</label>
@@ -76,14 +77,11 @@ function Login({ history }) {
           />
         </div>
         {passwordError && (
-          <p className="login-form__password-error" id="password-error">
-            {passwordError}
-          </p>
+           <Error className="login-form__password-error">{passwordError}</Error>
         )}
         {error && (
-          <p className="login-form__error" id="error">
-            {error}
-          </p>
+           <Error className="login-form__error">{error}</Error>
+    
         )}
         <input
           id="submit-btn"
