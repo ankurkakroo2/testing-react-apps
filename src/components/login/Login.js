@@ -54,7 +54,7 @@ function Login({ history }) {
     <section className="login-form">
       <h1 className="sign-in">Login</h1>
       <form onSubmit={handleLogin}>
-        <div>
+        <div className="form-field">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -66,7 +66,7 @@ function Login({ history }) {
         {userNameError && (
           <p className="login-form__username-error">{userNameError}</p>
         )}
-        <div>
+        <div className="form-field">
           <label htmlFor="password">Password</label>
           <input
             type="password"
@@ -76,10 +76,18 @@ function Login({ history }) {
           />
         </div>
         {passwordError && (
-          <p className="login-form__password-error">{passwordError}</p>
+          <p className="login-form__password-error" id="password-error">
+            {passwordError}
+          </p>
+        )}
+        {error && (
+          <p className="login-form__error" id="error">
+            {error}
+          </p>
         )}
         {error && <p className="login-form__error">{error}</p>}
         <input
+          id="submit-btn"
           type="submit"
           value={loading ? "Loading..." : "Login"}
           disabled={loading}
