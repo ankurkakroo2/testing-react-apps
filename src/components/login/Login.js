@@ -34,11 +34,11 @@ function Login({ history }) {
       setLoading(false);
     }
   };
-  const resetErrors = () =>{
+  const resetErrors = () => {
     setError(null);
     setUserNameError(null);
-    setPasswordError(null)
-  }
+    setPasswordError(null);
+  };
   const validateUserDetails = () => {
     if (!username.value.trim()) {
       setUserNameError(Blank_UserName);
@@ -64,9 +64,7 @@ function Login({ history }) {
           />
         </div>
         {userNameError && (
-          <p className="login-form__username-error">
-           {userNameError}
-          </p>
+          <p className="login-form__username-error">{userNameError}</p>
         )}
         <div className="form-field">
           <label htmlFor="password">Password</label>
@@ -78,16 +76,17 @@ function Login({ history }) {
           />
         </div>
         {passwordError && (
-          <p className="login-form__password-error">
-           {passwordError}
+          <p className="login-form__password-error" id="password-error">
+            {passwordError}
           </p>
         )}
         {error && (
-          <p className="login-form__error">
-           {error}
+          <p className="login-form__error" id="error">
+            {error}
           </p>
         )}
         <input
+          id="submit-btn"
           type="submit"
           value={loading ? "Loading..." : "Login"}
           disabled={loading}
