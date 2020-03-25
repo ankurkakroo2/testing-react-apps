@@ -17,15 +17,15 @@ describe("Login", () => {
   test("snapshot", () => {
     expect(result.asFragment()).toMatchSnapshot();
   });
-});
 
-describe("UI tests", () => {
   test("render username field", () => {
     expect(result.getByLabelText("Username")).toBeInTheDocument();
   });
+
   test("render password field", () => {
     expect(result.getByTestId("password")).toBeInTheDocument();
   });
+
   test("render submit button", () => {
     expect(result.getByTestId("submit-btn")).toBeInTheDocument();
   });
