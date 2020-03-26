@@ -2,15 +2,15 @@ import React, { useState } from "react";
 
 import { useFormInput, setUserSession } from "../../util/Common";
 import {
-  UserName,
-  Password,
-  Wrong_Details,
-  Blank_UserName,
-  Blank_Password
+  USERNAME,
+  PASSWORD,
+  WRONG_DETAILS,
+  BLANK_USERNAME,
+  BLANK_PASSWORD
 } from "../../constants";
 import "./default.css";
 
-function Login({ history }) {
+const Login = ({ history }) => {
   const username = useFormInput("");
   const password = useFormInput("");
   const [error, setError] = useState(null);
@@ -23,14 +23,14 @@ function Login({ history }) {
     resetErrors();
     if (validateUserDetails()) {
       setLoading(true);
-      if (username.value === UserName && password.value === Password) {
-        setUserSession(`${UserName}_${Math.random(0, 100)}`, username.value);
+      if (username.value === USERNAME && password.value === PASSWORD) {
+        setUserSession(`${USERNAME}_${Math.random(0, 100)}`, username.value);
         history.push("/dashboard");
         setError(null);
         return;
       }
 
-      setError(Wrong_Details);
+      setError(WRONG_DETAILS);
       setLoading(false);
     }
   };
@@ -41,15 +41,16 @@ function Login({ history }) {
   };
   const validateUserDetails = () => {
     if (!username.value.trim()) {
-      setUserNameError(Blank_UserName);
+      setUserNameError(BLANK_USERNAME);
       return false;
     } else if (!password.value.trim()) {
-      setPasswordError(Blank_Password);
+      setPasswordError(BLANK_PASSWORD);
       return false;
     }
     setError(null);
     return true;
   };
+
   return (
     <section className="login-form">
       <h1 className="sign-in">Login</h1>
@@ -60,7 +61,7 @@ function Login({ history }) {
             type="text"
             {...username}
             id="username"
-            data-test-id="username"
+            data-testid="username"
           />
         </div>
         {userNameError && (
@@ -72,7 +73,7 @@ function Login({ history }) {
             type="password"
             {...password}
             id="password"
-            data-test-id="password"
+            data-testid="password"
           />
         </div>
         {passwordError && (
@@ -91,11 +92,11 @@ function Login({ history }) {
           value={loading ? "Loading..." : "Login"}
           disabled={loading}
           className="submit-btn"
-          data-test-id="submit-btn"
+          data-testid="submit-btn"
         />
       </form>
     </section>
   );
-}
+};
 
 export default Login;

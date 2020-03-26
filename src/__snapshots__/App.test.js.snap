@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders learn react link 1`] = `
+<DocumentFragment>
+  <section
+    class="login-form"
+  >
+    <h1
+      class="sign-in"
+    >
+      Login
+    </h1>
+    <form>
+      <div>
+        <label
+          for="username"
+        >
+          Username
+        </label>
+        <input
+          data-test-id="username"
+          id="username"
+          type="text"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          for="password"
+        >
+          Password
+        </label>
+        <input
+          data-test-id="password"
+          id="password"
+          type="password"
+          value=""
+        />
+      </div>
+      <input
+        class="submit-btn"
+        data-test-id="submit-btn"
+        type="submit"
+        value="Login"
+      />
+    </form>
+  </section>
+</DocumentFragment>
+`;
