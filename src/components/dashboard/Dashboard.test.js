@@ -29,8 +29,8 @@ describe("Dashboard", () => {
   });
 
   test("should fire logout event", () => {
-    const { getByText } = result;
-    const logoutMenuItem = getByText("Logout");
+    const { getByTestId } = result;
+    const logoutMenuItem = getByTestId("menu-item-logout");
     fireEvent.click(logoutMenuItem);
     expect(historyMock.push).toHaveBeenCalledWith("/login");
   });
