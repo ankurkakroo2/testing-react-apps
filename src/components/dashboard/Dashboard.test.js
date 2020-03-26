@@ -2,13 +2,13 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 
 import Dashboard from "./Dashboard";
-import { setUserSession, removeUserSession, getUser } from "../../util/Common";
+import { setUserSession, removeUserSession } from "../../util/Common";
+import { Username } from "../../constants";
 
 let result;
-const user = "admin";
+const historyMock = { push: jest.fn() };
 beforeEach(() => {
-  setUserSession("token", user);
-  const historyMock = { push: jest.fn() };
+  setUserSession("token", Username);
   result = render(<Dashboard history={historyMock} />);
 });
 
@@ -21,17 +21,17 @@ describe("Dashboard", () => {
     expect(result.asFragment()).toMatchSnapshot();
   });
 
-  test("should render menu item with logged in user name", () => {
+  test("should render menu item with logged in Username", () => {
     const { getByTestId } = result;
     const signedInMenuItem = getByTestId("menu-item-username");
-    expect(signedInMenuItem.textContent).toBe(`Signed in as: ${user}`);
+    expect(signedInMenuItem.textContent).toBe(`Signed in as: ${Username}`);
     removeUserSession();
   });
 
   test("should fire logout event", () => {
     const { getByText } = result;
-    const node = getByText("Logout");
-    fireEvent.click(node);
-    expect(getUser()).toBe(null);
+    const logoutMenuItem = getByText("Logout");
+    fireEvent.click(logoutMenuItem);
+    expect(historyMock.push).toHaveBeenCalledWith("/login");
   });
 });
