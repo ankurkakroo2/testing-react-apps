@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { AccountCircle, Menu as MenuIcon } from "@material-ui/icons";
+import { AccountCircle } from "@material-ui/icons";
 
 import {
   AppBar,
@@ -55,6 +55,7 @@ const Dashboard = props => {
           </Typography>
           <div>
             <IconButton
+              data-testid="account-icon-button"
               id="account-icon-button"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -65,36 +66,38 @@ const Dashboard = props => {
               <AccountCircle />
             </IconButton>
             <Menu
+              data-testid="account-menu"
               id="account-menu"
               anchorEl={anchorEl}
               keepMounted
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem id="menu-item-username" onClick={() => {}}>
+              <MenuItem
+                data-testid="menu-item-username"
+                id="menu-item-username"
+                onClick={() => {}}
+              >
                 Signed in as: {user}
               </MenuItem>
-              <MenuItem id="menu-item-profile" onClick={() => {}}>
+              <MenuItem
+                data-testid="menu-item-profile"
+                id="menu-item-profile"
+                onClick={() => {}}
+              >
                 Profile
               </MenuItem>
-              <MenuItem id="menu-item-logout" onClick={handleLogout}>
+              <MenuItem
+                data-testid="menu-item-logout"
+                id="menu-item-logout"
+                onClick={handleLogout}
+              >
                 Logout
               </MenuItem>
             </Menu>
           </div>
         </Toolbar>
       </AppBar>
-      {/* <div className="dashboard__header">
-        <div className="dashboard__header__profile-section">
-          <div className="dashboard__header__profile-icon"></div>
-          <input
-            className="dashboard__logout-btn"
-            type="button"
-            onClick={handleLogout}
-            value="Logout"
-          />
-        </div>
-      </div> */}
       <PlaceHolder />
     </section>
   );

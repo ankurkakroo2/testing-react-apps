@@ -1,18 +1,37 @@
 import React from "react";
+import { render, fireEvent } from "@testing-library/react";
+
 import Dashboard from "./Dashboard";
-import { render } from "@testing-library/react";
+import { setUserSession, removeUserSession } from "../../util/Common";
+import { Username } from "../../constants";
 
 let result;
+const historyMock = { push: jest.fn() };
 beforeEach(() => {
-  result = render(<Dashboard />);
+  setUserSession("token", Username);
+  result = render(<Dashboard history={historyMock} />);
 });
 
-describe("Dashboard", () => {
-  test("render without crash", () => {
-    expect(result.getByText("Welcome", { exact: false })).toBeInTheDocument();
-  });
+/* afterEach(() => {
+  removeUserSession();
+}); */
 
+describe("Dashboard", () => {
   test("snapshot", () => {
     expect(result.asFragment()).toMatchSnapshot();
+  });
+
+  test("should render menu item with logged in Username", () => {
+    const { getByTestId } = result;
+    const signedInMenuItem = getByTestId("menu-item-username");
+    expect(signedInMenuItem.textContent).toBe(`Signed in as: ${Username}`);
+    removeUserSession();
+  });
+
+  test("should fire logout event", () => {
+    const { getByTestId } = result;
+    const logoutMenuItem = getByTestId("menu-item-logout");
+    fireEvent.click(logoutMenuItem);
+    expect(historyMock.push).toHaveBeenCalledWith("/login");
   });
 });
