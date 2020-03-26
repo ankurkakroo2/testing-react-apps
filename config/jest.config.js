@@ -2,7 +2,8 @@ module.exports = {
   rootDir: "../",
   verbose: true,
   moduleDirectories: ["node_modules"],
-  setupFiles: ["<rootDir>/src/jest.setup.js"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  // setupFilesAfterEnv: ["<rootDir>/config/jest.setup.js"],
   testPathIgnorePatterns: ["/node_modules/"],
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
   coverageThreshold: {
@@ -23,5 +24,8 @@ module.exports = {
   coverageReporters: ["lcov", "json", "text-summary"],
   transform: {
     "\\.(js|jsx)?$": "babel-jest"
+  },
+  moduleNameMapper: {
+    "\\.(css|scss)$": "<rootDir>/src/styleMock.js"
   }
 };
