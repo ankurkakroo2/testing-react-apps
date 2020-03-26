@@ -27,7 +27,7 @@ describe("Login", () => {
   });
 
   test("render username field", () => {
-    expect(result.getByLabelText("Username")).toBeInTheDocument();
+    expect(result.getByTestId("username")).toBeInTheDocument();
   });
 
   test("render password field", () => {
@@ -44,7 +44,7 @@ describe("Login", () => {
   });
 
   test("show error for empty password", () => {
-    fireEvent.change(result.getByLabelText("Username"), {
+    fireEvent.change(result.getByTestId("username"), {
       target: { value: USERNAME }
     });
     fireEvent.click(result.getByTestId("submit-btn"));
@@ -52,10 +52,10 @@ describe("Login", () => {
   });
 
   test("show error for wrong username", () => {
-    fireEvent.change(result.getByLabelText("Username"), {
+    fireEvent.change(result.getByTestId("username"), {
       target: { value: "test" }
     });
-    fireEvent.change(result.getByLabelText("Password"), {
+    fireEvent.change(result.getByTestId("password"), {
       target: { value: PASSWORD }
     });
     fireEvent.click(result.getByTestId("submit-btn"));
@@ -63,10 +63,10 @@ describe("Login", () => {
   });
 
   test("show error for wrong password", () => {
-    fireEvent.change(result.getByLabelText("Username"), {
+    fireEvent.change(result.getByTestId("username"), {
       target: { value: USERNAME }
     });
-    fireEvent.change(result.getByLabelText("Password"), {
+    fireEvent.change(result.getByTestId("password"), {
       target: { value: "test" }
     });
     fireEvent.click(result.getByTestId("submit-btn"));
@@ -74,10 +74,10 @@ describe("Login", () => {
   });
 
   test("route to next page for correct details", () => {
-    fireEvent.change(result.getByLabelText("Username"), {
+    fireEvent.change(result.getByTestId("username"), {
       target: { value: USERNAME }
     });
-    fireEvent.change(result.getByLabelText("Password"), {
+    fireEvent.change(result.getByTestId("password"), {
       target: { value: PASSWORD }
     });
     fireEvent.click(result.getByTestId("submit-btn"));
