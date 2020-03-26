@@ -2,8 +2,7 @@ module.exports = {
   rootDir: "../",
   verbose: true,
   moduleDirectories: ["node_modules"],
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
-  // setupFilesAfterEnv: ["<rootDir>/config/jest.setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/config/jest.setup.js"],
   testPathIgnorePatterns: ["/node_modules/"],
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
   coverageThreshold: {
