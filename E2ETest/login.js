@@ -1,7 +1,6 @@
 import { Selector } from "testcafe";
 import LoginPage from "./pageModalLogin";
 import {username, password} from "./pageModalLogin";
-import { axeCheck, createReport } from 'axe-testcafe';
 import {
   UserName,
   Password,
