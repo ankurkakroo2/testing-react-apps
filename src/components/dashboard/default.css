@@ -1,0 +1,19 @@
+.dashboard__header {
+    background-color:#8C55AA
+}
+.dashboard__header .dashboard__logout-btn {
+    color: #fff;
+    margin: 10px;
+}
+.dashboard__header__profile-icon{
+    margin: 4px;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.dashboard__header__profile-section{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
